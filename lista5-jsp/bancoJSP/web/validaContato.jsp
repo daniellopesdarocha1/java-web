@@ -30,7 +30,9 @@
     <body>
         <h1>Nome : <%=nome%></h1> <br>
         <h1>Email : <%=email%></h1> <br>
-        <h1>End : <%=endereco%></h1> <br>
+        <h1>End : <%=endereco%></h1> <br><br>
+        
+        <a href="index.html">Voltar</a>
     </body>
 </html>
 </form>

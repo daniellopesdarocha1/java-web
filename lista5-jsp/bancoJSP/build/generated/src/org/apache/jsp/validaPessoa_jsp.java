@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
 import br.com.fatec.jdbc.modelo.Pessoa;
 import br.com.fatec.jdbc.DAO.PessoaDAO;
@@ -51,19 +53,24 @@ public final class validaPessoa_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("\n");
 
     String nome = request.getParameter("NOME");
     int idade = Integer.parseInt(request.getParameter("IDADE"));
     String sexo = request.getParameter("SEXO");
-    //Date dataNasc = request.getParameter("DATANASC");
+    //Date dataNasc = request.getParameter("DATANASC"); erro
+    String dataString = request.getParameter("DATANASC");  
+    DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");  
+    java.sql.Date dataNasc = new java.sql.Date(fmt.parse(dataString).getTime());  
     
     Pessoa p1 = new Pessoa();
     p1.setNome(nome);
     p1.setIdade(idade);
     p1.setSexo(sexo);
-    //p1.setDataNasc(dataNasc);
+    p1.setDataNasc(dataNasc);
     
     PessoaDAO dao = new PessoaDAO();
     dao.adiciona(p1);
@@ -84,11 +91,14 @@ public final class validaPessoa_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("</h1> <br/>\n");
       out.write("        <h1>Sexo : ");
       out.print(sexo);
-      out.write("</h1> <br/>\n");
+      out.write("</h1> <br>\n");
+      out.write("        <h1>Data Nasc: ");
+      out.print(dataNasc);
+      out.write("</h1><br/><br/>\n");
+      out.write("        <a href=\"index.html\">Voltar</a>\n");
+      out.write("        \n");
       out.write("    </body>\n");
-      out.write("</html>\n");
-      out.write("</form>\n");
-      out.write("\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

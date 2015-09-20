@@ -17,7 +17,7 @@
             Nome: <input type="text" name="NOME" value="">  <br/>
             Idade: <input type="text" name="IDADE" value="">  <br/>
             Sexo: <input type="text" name="SEXO" value="">  <br/>
-            <!--Data Nasc: <input type="text" name="DATANASC" value="">  <br>-->
+            Data Nasc: <input type="text" name="DATANASC" value="">  <br>
             <input type="submit" name="Enviar" value="Enviar">  <br/>
         </form>
     </body>

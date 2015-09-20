@@ -25,6 +25,8 @@
             Nome: <%=pessoas.getNome()%>
             Idade: <%=pessoas.getIdade()%>
             Sexo: <%=pessoas.getSexo()%>
+            Data Nasc: <%=pessoas.getDataNasc()%>
+                    
             <br/>
      <% } %>
      
