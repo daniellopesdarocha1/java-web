@@ -14,8 +14,8 @@
     <body>
         <h1>Inseri Contato</h1>
         <form name="inseriContato" action="validaContato.jsp" method="POST">
-            Nome <input type="text" name="NOME" value="">  <br>
-            Email <input type="text" name="EMAIL" value="">  <br>
+            Nome: <input type="text" name="NOME" value="">  <br>
+            Email: <input type="text" name="EMAIL" value="">  <br>
             End: <input type="text" name="END" value="">  <br>
             <input type="submit" name="Enviar" value="Enviar">  <br>
         </form>
